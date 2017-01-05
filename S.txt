@@ -1,0 +1,54 @@
+package details;
+import java.io.*;
+
+public class Employee {
+
+	
+	public Employee(){
+		String  name1 = "div";
+	}
+	public int empAge(){
+		int age = 10;
+		return age;
+	}
+	public void designation(String designation){
+		empOneDesignation = designation;
+	}
+	public void salary(double salary){
+		empOneSalary = salary;
+	}
+	public void printEmployee(){
+		System.out.println("Name passed is :" + name);
+		System.out.println("Age : " + age );
+		System.out.println("Designation : " + empOneDesignation );
+		System.out.println("Salary : " + empOneSalary );
+	}
+	
+	
+
+}
+
+package details;
+public class EmployeeTest extends Employee{
+	public static void main(String[] args) {
+		
+		
+			
+			// TODO Auto-generated method stub
+EmployeeTest empOne = new EmployeeTest();
+EmployeeTest empTwo = new EmployeeTest();
+
+
+
+empOne.empAge(23);
+empOne.designation("QA");
+empOne.salary(5000);
+empOne.printEmployee();
+
+empTwo.empAge(23);
+empTwo.designation("Developer");
+empTwo.salary(6000);
+empTwo.printEmployee();
+		}
+	}
+

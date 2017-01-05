@@ -1,0 +1,188 @@
+1. what is the use of framework in automation testing?
+Ans: Framework is an execution environment for automated tests, It is a predefined set 
+of rules and practices for running automated test cases. In detail it contains the Packages,
+classes, methods in a seperate folders. so that it can reuse or add some external plugins 
+into that seperately or change code or add functionality into that without changing anything 
+extra in any other files.
+
+2. Things to consider in a Framework?
+Ans: we will add classes and methods to handle exceptions/errors, reading data from different 
+sources, custom report classes etc.,
+
+	Test Script modularity(we use waitNQA, NUnit and cruiseControl.NET)
+	Data driven or key board driven tetsing
+	Environment to support the test framework
+	Maintenance friendly
+	The right tools
+
+3. Different types of frameworks in Selenium/QTP?
+Ans: Modularity testing framework
+Data Driven framework
+Keyword framework
+Hybrid Framework
+Test driven development
+Behavior driven development
+
+4. what is data driven frame work and when do we use it?
+Ans: To test same functionality more than once with different set of data/input data
+We store the test data in external files (excel/csv) or table. When you  want to create 
+multiple user accounts
+
+5. what is keyword driven frame work and when do we use it?
+Ans: It is a table driven tetsing or action word based tetsing. In this kind of tetsing
+we use a table or spreadsheet for specifying the actions or keywords then using those 
+keywords we perform automation testing. 
+Keyword Driven Framework is a type of QTP Framework where for a particular test case, 
+you would first identify a set of Keywords and then associate an action (or function) 
+which each of these keywords.
+
+6. what is hybrid driven frame work and when do we use it?
+Ans: Combination of any two or more frameworks is  known as the hybrid automation framework.
+Depending upon the user requirements and tets condiitons user selects some features from 
+each framework for his project.
+
+
+7. Data input can be from any of the following files like MS Excel files, Database, 
+Text files, XML files.
+
+8. What is POM?
+Ans: Project Object Model is the fucntional unit of work in Maven. It is a xml 
+document which contains all the details and information about the project like configuration 
+details used by Maven to build the project. POM contains all the default values like build 
+directory as target, source directory a src/main/java and test source directory 
+as src/test/java. Super POM is the default Maven's pom.
+
+It is a functional unit in Maven which contains all the repositories, plugins and all the 
+information about the project to create the test object while executing and to run the 
+project.
+
+9. What is Modular framework?
+Ans:  In this framework, a test scripts are written to match a functionality that 
+represent modules of the application-under-test. These modules in turn are used in a 
+hierarchical fashion to build large test cases.
+
+10. What is a TestNG?
+Ans: TestNG is a testing framework inspired from JUnit and NUnit but introducing some 
+new functionalities that make it more powerful and easier to use, such as: Annotations, 
+flexible test configuration, Embeds beanshell for furhter flexibility, 
+Run your tests in arbitrarily big thread pools with various policies
+available (all methods in their own thread, one thread per test class, etc...).
+
+TestNg is a testing framework inspired from JUnit and NUnit with some more added 
+functionalities which were easy to use like annotations, flexible test configuration,
+embeds beanshell for further functionality, can execute many test cases in a big 
+thread pool with various group policies.
+
+11. What is JUnit?
+Ans: JUnit is an open source unit testing framework designed for the purpose of writing and running 
+tests in the Java programming language. JUnit has a graphical user interface (GUI), 
+making it possible to write and test source code quickly and easily. JUnit allows the 
+developer to incrementally build test suites to measure progress and detect unintended 
+side effects. Tests can be run continuously. Results are provided immediately.
+
+JUnit is a open source unit testing framework used to write and execute test cases in the
+java programming language. It has GUI, making it possible to execute tests fastly and detect 
+the unintended side effects. But it has some deficiencies like multi thread safe, reuse of JVM
+it will not accept some oops rules.
+
+
+Junit deficiencies:
+Multi thread access
+Different objects thinking they are accesing private content, while it is shared
+Reuse of the same JVM.
+Classes in object-oriented programming obey very simple rules:
+If you invoke your initialization from the constructor, it will only be invoked once.
+If your content is not static, it is guaranteed to be private to your instance.
+JUnit violates these two principles and I just can’t get used to it. 
+
+
+12. Important elements in TestNG.xml?
+Ans: It has Annotations property, Tests that your code is multi thread safe, 
+powerful execution model(no more testsuite), Deafualt JDK fucntions for 
+run time and logging, flexible test configuration.
+Annotations are easier to understand
+Test cases can be grouped more easily
+Parallel testing is possible.
+TestNG is a testing framework that is capable of making Selenium tests easier to understand and of generating reports that are easy to understand.
+The main advantages of TestNG over JUnit are the following.
+Annotations are easier to use and understand.
+Test cases can be grouped more easily.
+TestNG allows us to create parallel tests.
+The Console window in Eclipse generates a text-based result while the TestNG window is more useful because it gives us a graphical output of the test result plus other meaningful details such as:
+Runtimes of each method.
+The chronological order by which methods were executed.
+TestNG is capable of generating HTML-based reports.
+Annotations can use parameters just like the usual Java methods.
+
+https://www.linkedin.com/pulse/selenium-webdriver-frameworkjunit-testng-differences-akhil-reddy
+Differences between testNg and JUnit.
+JUnit: we need to install, old framework, results not clear, we can't priority base.
+
+
+13. what is group and suite and parallel execution in testng?
+Ans: Group test is a new innovative feature in TestNG, which doesn't exist in 
+JUnit framework. It permits you to dispatch methods into proper portions and perform 
+sophisticated groupings of test methods. Groups are specified in your testng.xml 
+file using the <groups> tag. 
+A test suite is a collection of test cases intended to test a behavior or a 
+set of behaviors of software program. In TestNG, we cannot define a suite in testing 
+source code, but it is represented by one XML file, as suite is the feature of execution. 
+It also allows flexible configuration of the tests to be run.
+Parallelism or multi-threading in software terms is defined as the 
+ability of the software, operating system, or program to execute multiple parts or 
+sub-components of another program simultaneously. TestNG allows the tests to run in 
+parallel or multi-threaded mode.
+
+14. What tests to be automated?
+Ans: In case of Regression testing, smoke testing, load&performance testing, 
+data driven testing, static and repetitive tests.
+It depends on the lot of  factors like: AUT, Environment, Hardware Dependencies, 
+Potential Impacts, certain tasks which require regular seup of environment, 
+involving complex calculations And others.
+Commomn sense and ROI return on investment.
+
+15. What are the steps in automation testing or when do we do automation testing?
+Ans: Test tool selection
+Define the scope of Automation
+Planning, Design and Development
+Test Execution
+Framework in Automation 
+A framework is  set of automation guidelines which help in  
+
+Maintaining consistency of Testing
+Improves test structuring
+Minimum usage of code
+Less Maintenance of code
+Improve re-usability
+Non Technical testers can be involved in code
+Training period of using the tool can be reduced
+Involves Data wherever appropriate 
+
+http://www.guru99.com/automation-testing.html
+
+
+16. what is the use of dataprovider annotation?
+Ans: The data provider is another annotation which supports data-driven testing. 
+You can use it to handle a broad range of complex parameters like the following.
+
+Java objects.
+Objects read from a database.
+Data from Excel or property file etc.
+Below are some interesting facts about the data provider.
+
+This annotation has one string attribute which is its name. If you don’t specify a 
+name, then the method’s name serves as the default name.
+A data provider method prepares and returns a 2-d list of objects.
+A data-driven test would run once for each set of data specified by the data provider 
+object.
+
+17. Difference between junit and testng?
+Ans: Major difference in TestNG and JUnit test frameworks is their scope. Junit is a 
+unit testing framework while TestNG addresses testing at a higher level. and my 
+recommendation is TestNG(Next Generation) Framework.
+
+18. how to generate reports using testng?
+Ans: To run script simply right click and select TestNG Test.
+Now test case will start execution and you will get console notification about the 
+status and wait until the program is getting finished.
+

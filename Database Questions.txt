@@ -1,0 +1,210 @@
+1. what is Database?
+Ans: A database is a collection of information that is well organized so that it can be 
+easily accessed, updated and managed. 
+
+2. What is a Database Management System?
+Ans: Database Management System is a system software with a collection of programs that 
+interacts with the user to access, modify and update the database.
+TYPES OF DATABASES: Hierarchical database 
+		    Network database 
+		    Relational database 
+		    Object-oriented database.
+
+3. What is a table?
+Ans: Table is a set of data elements using a model of vertical columns and horizontal rows,
+(A table can have any number of rows but speicified number of columns).
+
+4. What is a cell in a table?
+Ans: A cell is a unit where columns and rows intersect.
+
+5.> What is a Column?
+Ans: A column is a set of data values of a particular type, provides the strucuture 
+and each coulmn 
+
+6. What is a row?
+Ans: A row is a horizontal section in a table that provides a data value for each column.
+
+7. What is a Join?
+(Used to combine and compare)
+Ans: Join clause is a means for combining data(columns or rows) from one or more tables by using 
+values common to each other.
+
+8. What is a inner join?
+Ans: It finds and returns matching data from tables.
+Example: SELECT table1.column1, table2.column2
+	 FROM table1
+	 INNER JOIN table2
+	 ON table1.common_field = table2.common_field;
+https://www.tutorialspoint.com/sql/sql-inner-joins.htm
+
+
+9. What is a outer join?
+Ans: It finds and returns matching data and some dissimilar data from tables.
+
+Left Outer Join: It will return all the data in the table1 (left table) and shared 
+data in the table1 (left table) and corresponding data in the table2(right table). 
+Example: 
+
+SELECT PRICES.*,QUANTITIES.QUANTITY
+FROM PRICES
+LEFT OUTER JOIN QUANTITIES
+ON PRICES_PRODUCT=QUANTITIES_PRODUCT;
+
+https://www.tutorialspoint.com/sql/sql-inner-joins.htm
+
+10. RIght Outer Join?
+Ans: It finds and returns all the data and shared data in the table2(right table) 
+and corresponding data in the Table1. 
+Example: SELECT prices.*,Quantities.Qauntity
+	 FROM prices 
+	 RIGHT OUTER JOIN Quantities
+	 ON Prices_Product=Quantities_Product;
+
+https://www.tutorialspoint.com/sql/sql-inner-joins.htm
+
+11. Example for MAX, SUM, AVG?
+Ans: SUM is an aggregate function which sums up all the values in a column.
+ Example: SELECT SUM(Total) FROM Orders
+	  WHERE OrderDate BETWEEN '' AND ''
+
+https://www.universalclass.com/articles/computers/sql/using-the-sum-avg-count-min-max-operators-in-sql.htm
+
+AVG function sums up or adds up all the values and then calculates the average. (depends on the 
+total number of records)
+Example:
+	SELECT AVG(Total) FROM Orders
+	WHERE OrderDate BETWEEN '' AND ''
+
+COUNT: SELECT COUNT(*) FROM Orders
+
+MAX finds the maximum value in a record set.
+Example: SELECT MAX(Total) FROM Order
+	 WHERE OrderDate BETWEEN '' AND ''
+MIN finds the minimum value in a record set.
+Example: SELECT MIN(Total) FROM Order
+	 WHERE OrderDate BETWEEN '' AND ''
+
+
+12. GROUPBy
+Ans: Used along with SELECT statement to arrange identical data into groups and arrange in alphabetical order.
+
+Example: SELECT Name, SUM(Salary) 
+	 FROM Customers
+	 GROUP BY Name;
+
+13. HAVING COUNT
+Ans:   Example:	SELECT Employees.LastName, COUNT(Orders.OrderID) AS NumberOfOrders FROM (Orders
+	INNER JOIN Employees
+	ON Orders.EmployeeID=Employees.EmployeeID)
+	GROUP BY LastName
+	HAVING COUNT(Orders.OrderID) > 10;
+
+W3 schools
+
+14. WHERE ?
+Ans: Used to ectract only those records.
+
+15. Primary Key?
+Primary key is a unique identification for a each record in a database.
+MySQL:
+
+CREATE TABLE Persons
+(
+P_Id int NOT NULL,
+LastName varchar(255) NOT NULL,
+FirstName varchar(255),
+Address varchar(255),
+City varchar(255),
+PRIMARY KEY (P_Id)
+)
+
+SQL Server / Oracle / MS Access:
+
+CREATE TABLE Persons
+(
+P_Id int NOT NULL PRIMARY KEY,
+LastName varchar(255) NOT NULL,
+FirstName varchar(255),
+Address varchar(255),
+City varchar(255)
+)
+
+16. Foreign key?
+Ans: A FOREIGN KEY in one table points to a PRIMARY KEY in another table.
+MySQL:
+
+CREATE TABLE Orders
+(
+O_Id int NOT NULL,
+OrderNo int NOT NULL,
+P_Id int,
+PRIMARY KEY (O_Id),
+FOREIGN KEY (P_Id) REFERENCES Persons(P_Id)
+)
+
+SQL Server / Oracle / MS Access:
+
+CREATE TABLE Orders
+(
+O_Id int NOT NULL PRIMARY KEY,
+OrderNo int NOT NULL,
+P_Id int FOREIGN KEY REFERENCES Persons(P_Id)
+)
+
+
+17. UseCase?
+Ans: Use case is a collection of user scenarios which represents the user 
+actions and system response with the evry particular functionality. It is also a 
+pictorial representation of user actions to acheive a task.
+
+Tables for the following: 
+Employee Management System:
+
+CREATE TABLE Employees
+(
+Emp_id int NOT NULL,
+Emp Varchar(255) NOT NULL,
+EmpAdress Varchar(255),
+Empadressid Varchar(255) NOT NULL,
+PRIMARY KEY (Emp_id),
+FOREIGN KEY (Emp_id) REFERENCES Someothertable(Emp_id),
+)
+
+e-Commerce: 
+
+CREATE TABLE E-Commerce
+(
+id int NOT NULL,
+Username varchar(255) NOT NULL,
+Password varchar(255) NOT NULL,
+dateJoined int NOT NULL,
+Firstname Varchar(255),
+Lastname Varchar(255),
+email varchar(255),
+Website varchar(255),
+Shortbio varchar(255),
+Location varchar(255),
+PRIMARY KEY (id),
+FOREIGN KEY (Lastname) REFERENCES Someothertable(Lastname),
+)
+
+Library managemnt system:
+
+CREATE TABLE Librarydata
+(
+id_no int NOT NULL PRIMARY KEY,
+Name varchar(255) NOT NULL FOREIGN KEY REFERENCES Someothertablename(Name),
+Address Varchar(255),
+DateofIssue int NOT NULL,
+DateofExpiry int NOT NULL,
+Status Varchar(255),
+)
+18. Finding the second highest salary in the table?
+Ans: 	SELECT MAX(Salary) FROM Employee
+	WHERE Salary NOT IN (SELECT MAX(Salary) FROM Employee )
+
+or
+	select MAX(Salary) from Employee
+	WHERE Salary <> (select MAX(Salary) from Employee )
+
+
